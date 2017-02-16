@@ -116,6 +116,6 @@ new results, use code like this:
         for post in r['posts']:
             perform_action(post)
         time.sleep(300)
-        r = r.get_next()
+        r = webhoseio.get_next()
 ```        
 
