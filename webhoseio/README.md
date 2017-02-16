@@ -76,7 +76,7 @@ Now you can make a request and inspect the results:
 For your convenience, the ouput object is iterable, so you can loop over it
 and get all the results of this batch (up to 100). 
 
-````python
+```python
 
     >>> total_words = 0
     >>> for post in output['posts']:
@@ -84,15 +84,15 @@ and get all the results of this batch (up to 100).
     ...
     >>> print(total_words)
     8822
-````    
+```    
 Full documentation
 ------------------
 
-* config(token)
+* ``config(token)``
 
   * token - your API key
 
-* query(end_point_str, params)
+* ``query(end_point_str, params)``
 
   * end_point_str: 
     * filterWebData - access to the news/blogs/forums/reviews API
@@ -100,4 +100,22 @@ Full documentation
     * darkWebAPI - access to the dark web (coming soon)
   * params: A key value dictionary. The most common key is the "q" parameter that hold the filters Boolean query. [Read about the available filters](https://webhose.io/documentation).
 
+* ``get_next()`` - a method to fetch the next page of results.
+    
+    
+Polling
+-------
+
+If you want to make repeated searches, performing an action whenever there are
+new results, use code like this:
+
+``` python
+
+    r = webhoseio.query("filterWebData", {"q":"skyrim"})
+    while True:
+        for post in r['posts']:
+            perform_action(post)
+        time.sleep(300)
+        r = r.get_next()
+```        
 
