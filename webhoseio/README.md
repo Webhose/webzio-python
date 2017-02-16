@@ -47,8 +47,15 @@ To get started, you need to import the library, and set your access token.
 ```python
 
     >>> import webhoseio
-    >>> webhoseio.config(token=YOUR_API_KEY)
+    >>> webhoseio.config(token=YOUR_API_KEY)      
 ```
+
+**API Endpoints**
+
+The first parameter the query() function accepts is the API endpoint string. Available endpoints:
+* filterWebData - access to the news/blogs/forums/reviews API
+* productDataAPI - access to data about eCommerce products/services
+* darkWebAPI - access to the dark web (coming soon)
 
 Now you can make a request and inspect the results:
 
@@ -66,9 +73,8 @@ Now you can make a request and inspect the results:
 ```
 
 
-For your convenience, the Response object is iterable, so you can loop over it
-and get all the results. The iterator will create additional API requests to
-fetch additional pages.
+For your convenience, the ouput object is iterable, so you can loop over it
+and get all the results of this batch (up to 100). 
 
 ````python
 
@@ -79,6 +85,19 @@ fetch additional pages.
     >>> print(total_words)
     8822
 ````    
+Full documentation
+------------------
 
-**Warning**: This method can use up your credits if your search has lots of
-results.
+* config(token)
+
+  * token - your API key
+
+* query(end_point_str, params)
+
+  * end_point_str: 
+    * filterWebData - access to the news/blogs/forums/reviews API
+    * productDataAPI - access to data about eCommerce products/services
+    * darkWebAPI - access to the dark web (coming soon)
+  * params: A key value dictionary. The most common key is the "q" parameter that hold the filters Boolean query. [Read about the available filters](https://webhose.io/documentation).
+
+
