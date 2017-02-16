@@ -54,7 +54,7 @@ To get started, you need to import the library, and set your access token.
 
 The first parameter the query() function accepts is the API endpoint string. Available endpoints:
 * filterWebData - access to the news/blogs/forums/reviews API
-* productDataAPI - access to data about eCommerce products/services
+* productSearch - access to data about eCommerce products/services
 * darkWebAPI - access to the dark web (coming soon)
 
 Now you can make a request and inspect the results:
@@ -96,7 +96,7 @@ Full documentation
 
   * end_point_str: 
     * filterWebData - access to the news/blogs/forums/reviews API
-    * productDataAPI - access to data about eCommerce products/services
+    * productSearch - access to data about eCommerce products/services
     * darkWebAPI - access to the dark web (coming soon)
   * params: A key value dictionary. The most common key is the "q" parameter that hold the filters Boolean query. [Read about the available filters](https://webhose.io/documentation).
 
