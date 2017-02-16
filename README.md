@@ -33,7 +33,7 @@ You can install from source:
 ``` bash
 
     $ git clone https://github.com/Webhose/webhoseio-python
-    $ cd webhose-python
+    $ cd webhoseio-python
     $ python setup.py install
     
  ```
