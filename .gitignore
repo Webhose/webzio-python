@@ -9,3 +9,4 @@
 /webhoseio.egg-info/dependency_links.txt
 /webhoseio.egg-info/requires.txt
 /webhoseio.egg-info/top_level.txt
+*.pyc
