@@ -40,7 +40,7 @@ You can install from source:
  Or use pip install:
  
  ``` bash
- sudo pip install webhoseio
+    $ sudo pip install webhoseio
  ```
  
  Use the API
