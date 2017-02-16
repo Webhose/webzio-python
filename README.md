@@ -37,6 +37,11 @@ You can install from source:
     $ python setup.py install
     
  ```
+ Or use pip install:
+ 
+ ``` bash
+ sudo pip install webhoseio
+ ```
  
  Use the API
 -----------
