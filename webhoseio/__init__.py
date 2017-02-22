@@ -11,10 +11,14 @@ class Session(object):
     def query(self, end_point_str, param_dict=None):
 
         if param_dict is not None:
+            param_dict.update({"token": self.token})
+        else:
             param_dict = {
                 "format": "json",
                 "token": self.token
             }
+
+
 
         response = self.session.get("http://webhose.io/" + end_point_str, params=param_dict)
         if response.status_code != 200:
