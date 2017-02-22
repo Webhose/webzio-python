@@ -11,7 +11,7 @@ with open('README.md', 'r', 'utf-8') as f:
 setup(
     name='webhoseio',
     packages=['webhoseio'],
-    version='0.1',
+    version='0.2',
     author='Ran Geva',
     author_email='ran@webhose.io',
     url='https://github.com/Webhose/webhoseio-python',
