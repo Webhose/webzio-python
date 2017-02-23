@@ -12,6 +12,7 @@ class Session(object):
 
         if param_dict is not None:
             param_dict.update({"token": self.token})
+            param_dict.update({"format": "json"})
         else:
             param_dict = {
                 "format": "json",
