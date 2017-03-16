@@ -11,7 +11,7 @@ with open('README.md', 'r', 'utf-8') as f:
 setup(
     name='webhoseio',
     packages=['webhoseio'],
-    version='0.3',
+    version='0.4',
     author='Ran Geva',
     author_email='ran@webhose.io',
     url='https://github.com/Webhose/webhoseio-python',
@@ -31,6 +31,8 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4'
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6'
     )
 )
