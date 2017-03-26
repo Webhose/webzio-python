@@ -5,8 +5,6 @@ try:
 except ImportError:
     from distutils.core import setup
 
-with open('README.md', 'r', 'utf-8') as f:
-    readme = f.read()
 
 setup(
     name='webhoseio',
@@ -17,7 +15,7 @@ setup(
     url='https://github.com/Webhose/webhoseio-python',
     license='MIT',
     description='Simple client library for the webhose.io REST API',
-    long_description=readme,
+    long_description="",
     install_requires=[
         "requests >= 2.0.0"
     ],
