@@ -6,7 +6,7 @@ A simple way to access the [Webhose.io](https://webhose.io) API from your Python
     import webhoseio
 
     webhoseio.config(token=YOUR_API_KEY)
-    output = webhoseio.query("filterWebData", {"q":"github"})
+    output = webhoseio.query("filterWebContent", {"q":"github"})
     print output['posts'][0]['text'] # Print the text of the first post
     print output['posts'][0]['published'] # Print the text of the first post publication date
     
@@ -58,15 +58,15 @@ To get started, you need to import the library, and set your access token.
 **API Endpoints**
 
 The first parameter the query() function accepts is the API endpoint string. Available endpoints:
-* filterWebData - access to the news/blogs/forums/reviews API
-* productSearch - access to data about eCommerce products/services
-* darkWebAPI - access to the dark web (coming soon)
+* filterWebContent - access to the news/blogs/forums/reviews API
+* productFilter - access to data about eCommerce products/services
+* darkFilter - access to the dark web (coming soon)
 
 Now you can make a request and inspect the results:
 
 ```python
 
-    >>> output = webhoseio.query("filterWebData", {"q":"github"})
+    >>> output = webhoseio.query("filterWebContent", {"q":"github"})
     >>> output['totalResults']
     15565094
     len(output['posts'])
@@ -100,9 +100,9 @@ Full documentation
 * ``query(end_point_str, params)``
 
   * end_point_str: 
-    * filterWebData - access to the news/blogs/forums/reviews API
-    * productSearch - access to data about eCommerce products/services
-    * darkWebAPI - access to the dark web (coming soon)
+    * filterWebContent - access to the news/blogs/forums/reviews API
+    * productFilter - access to data about eCommerce products/services
+    * darkFilter - access to the dark web (coming soon)
   * params: A key value dictionary. The most common key is the "q" parameter that hold the filters Boolean query. [Read about the available filters](https://webhose.io/documentation).
 
 * ``get_next()`` - a method to fetch the next page of results.
@@ -116,7 +116,7 @@ new results, use code like this:
 
 ``` python
 
-    r = webhoseio.query("filterWebData", {"q":"skyrim"})
+    r = webhoseio.query("filterWebContent", {"q":"skyrim"})
     while True:
         for post in r['posts']:
             perform_action(post)
