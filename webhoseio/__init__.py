@@ -13,8 +13,8 @@ class Session(object):
         if param_dict is not None:
             param_dict.update({"token": self.token})
             param_dict.update({"format": "json"})
-       
-        response = self.session.get("http://webhose.io/" + end_point_str, params=param_dict)
+
+        response = self.session.get("https://webhose.io/" + end_point_str, params=param_dict)
         if response.status_code != 200:
             raise Exception(response.text)
 
