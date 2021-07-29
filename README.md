@@ -59,8 +59,6 @@ To get started, you need to import the library, and set your access token.
 
 The first parameter the query() function accepts is the API endpoint string. Available endpoints:
 * filterWebContent - access to the news/blogs/forums/reviews API
-* productFilter - access to data about eCommerce products/services
-* darkFilter - access to the dark web (coming soon)
 
 Now you can make a request and inspect the results:
 
