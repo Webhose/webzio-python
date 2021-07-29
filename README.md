@@ -99,8 +99,7 @@ Full documentation
 
   * end_point_str: 
     * filterWebContent - access to the news/blogs/forums/reviews API
-    * productFilter - access to data about eCommerce products/services
-    * darkFilter - access to the dark web (coming soon)
+
   * params: A key value dictionary. The most common key is the "q" parameter that hold the filters Boolean query. [Read about the available filters](https://webhose.io/documentation).
 
 * ``get_next()`` - a method to fetch the next page of results.
