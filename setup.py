@@ -7,14 +7,14 @@ except ImportError:
 
 
 setup(
-    name='webhoseio',
-    packages=['webhoseio'],
+    name='webzio',
+    packages=['webzio'],
     version='0.4',
     author='Ran Geva',
-    author_email='ran@webhose.io',
-    url='https://github.com/Webhose/webhoseio-python',
+    author_email='ran@webz.io',
+    url='https://github.com/webzio/webzio-python',
     license='MIT',
-    description='Simple client library for the webhose.io REST API',
+    description='Simple client library for the webz.io REST API',
     long_description="",
     install_requires=[
         "requests >= 2.0.0"

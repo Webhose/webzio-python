@@ -1,17 +1,17 @@
-webhose.io client for Python
+webz.io client for Python
 ============================
-A simple way to access the [Webhose.io](https://webhose.io) API from your Python code
+A simple way to access the [Webz.io](https://webz.io) API from your Python code
 ```python
 
-    import webhoseio
+    import webzio
 
-    webhoseio.config(token=YOUR_API_KEY)
-    output = webhoseio.query("filterWebContent", {"q":"github"})
+    webzio.config(token=YOUR_API_KEY)
+    output = webzio.query("filterWebContent", {"q":"github"})
     print output['posts'][0]['text'] # Print the text of the first post
     print output['posts'][0]['published'] # Print the text of the first post publication date
     
     # Get the next batch of posts
-    output = webhoseio.get_next()
+    output = webzio.get_next()
     print output['posts'][0]['thread']['site'] # Print the site of the first post
     
 
@@ -20,10 +20,10 @@ A simple way to access the [Webhose.io](https://webhose.io) API from your Python
 API Key
 -------
 
-To make use of the webhose.io API, you need to obtain a token that would be
+To make use of the webz.io API, you need to obtain a token that would be
 used on every request. To obtain an API key, create an account at
-https://webhose.io/auth/signup, and then go into
-https://webhose.io/dashboard to see your token.
+https://webz.io/auth/signup, and then go into
+https://webz.io/dashboard to see your token.
 
 
 Installing
@@ -32,15 +32,15 @@ You can install from source:
 
 ``` bash
 
-    $ git clone https://github.com/Webhose/webhoseio-python
-    $ cd webhoseio-python
+    $ git clone https://github.com/webz.io/webzio-python
+    $ cd webzio-python
     $ python setup.py install
     
  ```
  Or use pip install:
  
  ``` bash
-    $ sudo pip install webhoseio
+    $ sudo pip install webzio
  ```
  
  Use the API
@@ -51,8 +51,8 @@ To get started, you need to import the library, and set your access token.
 
 ```python
 
-    >>> import webhoseio
-    >>> webhoseio.config(token=YOUR_API_KEY)      
+    >>> import webzio
+    >>> webzio.config(token=YOUR_API_KEY)      
 ```
 
 **API Endpoints**
@@ -64,7 +64,7 @@ Now you can make a request and inspect the results:
 
 ```python
 
-    >>> output = webhoseio.query("filterWebContent", {"q":"github"})
+    >>> output = webzio.query("filterWebContent", {"q":"github"})
     >>> output['totalResults']
     15565094
     len(output['posts'])
@@ -100,7 +100,7 @@ Full documentation
   * end_point_str: 
     * filterWebContent - access to the news/blogs/forums/reviews API
 
-  * params: A key value dictionary. The most common key is the "q" parameter that hold the filters Boolean query. [Read about the available filters](https://webhose.io/documentation).
+  * params: A key value dictionary. The most common key is the "q" parameter that hold the filters Boolean query. [Read about the available filters](https://webz.io/documentation).
 
 * ``get_next()`` - a method to fetch the next page of results.
     
@@ -113,11 +113,11 @@ new results, use code like this:
 
 ``` python
 
-    r = webhoseio.query("filterWebContent", {"q":"skyrim"})
+    r = webzio.query("filterWebContent", {"q":"skyrim"})
     while True:
         for post in r['posts']:
             perform_action(post)
         time.sleep(300)
-        r = webhoseio.get_next()
+        r = webzio.get_next()
 ```        
 
