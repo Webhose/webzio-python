@@ -1,7 +1,8 @@
+============================
 webz.io client for Python
 ============================
-A simple way to access the [Webz.io](https://webz.io) API from your Python code
-```python
+A simple way to access the `Webz.io <https://webz.io/>`_ API from your Python code::
+.. code-block:: python
 
     import webzio
 
@@ -9,13 +10,10 @@ A simple way to access the [Webz.io](https://webz.io) API from your Python code
     output = webzio.query("filterWebContent", {"q":"github"})
     print output['posts'][0]['text'] # Print the text of the first post
     print output['posts'][0]['published'] # Print the text of the first post publication date
-    
+
     # Get the next batch of posts
     output = webzio.get_next()
     print output['posts'][0]['thread']['site'] # Print the site of the first post
-    
-
-```
 
 API Key
 -------
@@ -30,30 +28,28 @@ Installing
 ----------
 You can install from source:
 
-``` bash
+.. code-block:: bash
 
     $ git clone https://github.com/webz.io/webzio-python
     $ cd webzio-python
     $ python setup.py install
+
+Or use pip install:
+
+.. code-block:: bash
     
- ```
- Or use pip install:
- 
- ``` bash
     $ sudo pip install webzio
- ```
- 
- Use the API
+
+Use the API
 -----------
 
 To get started, you need to import the library, and set your access token.
 (Replace YOUR_API_KEY with your actual API key).
 
-```python
+.. code-block:: python
 
     >>> import webzio
-    >>> webzio.config(token=YOUR_API_KEY)      
-```
+    >>> webzio.config(token=YOUR_API_KEY)
 
 **API Endpoints**
 
@@ -62,7 +58,7 @@ The first parameter the query() function accepts is the API endpoint string. Ava
 
 Now you can make a request and inspect the results:
 
-```python
+.. code-block:: python
 
     >>> output = webzio.query("filterWebContent", {"q":"github"})
     >>> output['totalResults']
@@ -73,13 +69,11 @@ Now you can make a request and inspect the results:
     u'english'
     >>> output['posts'][0]['title']
     u'Putting quotes around dictionary keys in JS'
-```
-
 
 For your convenience, the ouput object is iterable, so you can loop over it
-and get all the results of this batch (up to 100). 
+and get all the results of this batch (up to 100).
 
-```python
+.. code-block:: python
 
     >>> total_words = 0
     >>> for post in output['posts']:
@@ -87,7 +81,7 @@ and get all the results of this batch (up to 100).
     ...
     >>> print(total_words)
     8822
-```    
+
 Full documentation
 ------------------
 
@@ -97,21 +91,21 @@ Full documentation
 
 * ``query(end_point_str, params)``
 
-  * end_point_str: 
+  * end_point_str:
     * filterWebContent - access to the news/blogs/forums/reviews API
 
   * params: A key value dictionary. The most common key is the "q" parameter that hold the filters Boolean query. [Read about the available filters](https://webz.io/documentation).
 
 * ``get_next()`` - a method to fetch the next page of results.
-    
-    
+
+
 Polling
 -------
 
 If you want to make repeated searches, performing an action whenever there are
 new results, use code like this:
 
-``` python
+.. code-block:: python
 
     r = webzio.query("filterWebContent", {"q":"skyrim"})
     while True:
@@ -119,5 +113,3 @@ new results, use code like this:
             perform_action(post)
         time.sleep(300)
         r = webzio.get_next()
-```        
-
