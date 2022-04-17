@@ -12,10 +12,10 @@ with open("pypi-desc", 'r') as _readme_file:
 setup(
     name='webzio',
     packages=['webzio'],
-    version='1.0.0',
+    version='1.0.1',
     author='Ran Geva',
     author_email='ran@webz.io',
-    url='https://github.com/webzio/webzio-python',
+    url='https://github.com/webhose/webzio-python',
     license='MIT',
     description='Simple client library for the webz.io REST API',
     long_description=long_description,
